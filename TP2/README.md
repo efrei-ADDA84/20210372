@@ -37,7 +37,7 @@ Le build et le push permettent de publier sur docker hub
 
     4- Test du fonctionnement de l'API
   - docker pull lynnxx/firstly:1.0.0 
-  - docker run --network host --env API_KEY=**** lynnxx/firstly:1.0.0
+  - docker run -p 8081:8081 --env API_KEY=**** ml
   - curl "http://localhost:8081/?lat=5.902785&lon=102.754175"
 
 On remarque qu'en fonction des données entrées, nous obtenons effectivement la météo en fonction de la situation géographique
