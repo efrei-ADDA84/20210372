@@ -3,7 +3,7 @@
 
 
 
-                                             27/05/2023     
+                                              
                                              TP 3 : Cloud - ACI
     
                                              OBJECTIFS
@@ -40,7 +40,7 @@ Nous utilisons Github Actions au lieu de l'interface utilisateur ou la CLI car c
                                 4- Test de fonctionnement de l'API
 
 Après le déploiement de l'application (push ou run du workflow), on peut interroger l'API déployée sur ACI avec une commande curl :
-curl "http://devops-20211180.francesouth.azurecontainer.io:8081/?lat=5.90275&lon=102.754175"
+curl "http://devops-20210372.francesouth.azurecontainer.io:8081/?lat=5.90275&lon=102.754175"
 
 
                                 5- Difficultés rencontrées
@@ -50,6 +50,8 @@ Nous avons été confrontés à deux problèmes :
   Solution :
   run: |
         docker build ./TP3
-
+-une erreur lors de building lorsqu'on lance le workflow.
+  Solution : 
+  supprimer deux lignes dans le fichier yaml qui etait à la cause de la mauvaise configuration
 - un bug lors de l'intrrogation de l'API : dans un premier temps, l'API renvoie les informations sur la météo. Puis, après un certain nombre de requêtes, le message revoyé est une erreur 404. Ce bug est probablement lié à azure cloud.
 Solution possible : supprimer la container instance et relancer le workflow github actions.
